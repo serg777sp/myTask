@@ -1,0 +1,60 @@
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #f5f5f5;
+}
+
+
+/* Custom page CSS
+-------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+
+body > .container {
+  padding: 60px 15px 0;
+}
+.container .text-muted {
+  margin: 20px 0;
+}
+
+#footer > .container {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+code {
+  font-size: 80%;
+}
+
+.form-panel-500 {
+    width: 500px;
+    margin: 0 auto;
+}
+.myimg {
+    width: 200px;
+    height: 150px;
+}
+.myimg-show {
+    width: 500px;
+}
+.post {
+    height: 350px;
+}
+.post-prev-text{
+    height: 80px;
+    overflow: hidden;
+}
+.modal-form {
+    width: 535px;
+}
