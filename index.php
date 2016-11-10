@@ -31,5 +31,9 @@ $app->route('GET /posts/generate', function(){
     $controller = new \App\Controllers\PostController();
     $controller->generate();
 });
+$app->route('GET /post/delete/@id', function($id){
+    $controller = new \App\Controllers\PostController();
+    $controller->delete($id);
+});
 
 $app->start();

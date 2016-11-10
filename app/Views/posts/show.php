@@ -15,6 +15,9 @@
                         echo '<h3>Постa нет</h3>';
                     }    
                   ?>
+                    <a href='/post/delete/<?php echo $post->id; ?>'>
+                        <button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Delete</button>
+                    </a>
               </div>
             </div>    
         <?php  Flight::render('posts/postMenu'); ?>

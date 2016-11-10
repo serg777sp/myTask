@@ -33,7 +33,11 @@ class Post extends Model {
         return parent::find($id, self::$table, self::class);
     }
     
-    public static function paginate($params){
+    public function delete(){
+        parent::delete($this->id, static::$table);
+    }
+
+        public static function paginate($params){
         $pagination = [];
         $total = self::getTotal()[0];
         $offset = 0;

@@ -30,7 +30,13 @@ class PostController extends Controller {
         Flight::render('posts/show',$viewData);
     }
     
-    public function paginate($page){
+    public function delete($id){
+        $post = Post::find($id);
+        $post->delete();
+        Flight::redirect('/posts');
+    }
+
+        public function paginate($page){
         $pagInfo['count'] = 6;
         $pagInfo['page'] = (int)$page;
         $pagination = Post::paginate($pagInfo);

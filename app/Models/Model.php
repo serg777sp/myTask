@@ -38,7 +38,14 @@ class Model {
         $STH = $db->prepare($query);
         $STH->execute();
         return $STH->fetchObject($class);
-    }    
+    }
+    
+    public function delete($id,$table){
+        $db = self::connectDB();
+        $query = 'DELETE FROM `'.$table.'` WHERE `id`='.$id;
+        $STH = $db->prepare($query);
+        $STH->execute();
+    }
 
     private function getCreateQuery(){
         $a = [];
