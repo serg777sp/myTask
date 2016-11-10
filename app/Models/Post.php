@@ -52,7 +52,7 @@ class Post extends Model {
         if($this->img_name != NULL){
             return \Flight::Url('upload/img/'.$this->img_name);
         }
-    return \Flight::Url('upload/img/noImage.jpg');    
+    return \Flight::Url('upload/img/no.jpg');    
     }
     
     public static function generate(){
