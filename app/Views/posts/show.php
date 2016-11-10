@@ -10,14 +10,15 @@
                     <h3><?php echo $post->title; ?></h3>
                     <img src="<?php echo $post->getImgUrl(); ?>" class="myimg-show" title="post image">
                     <p class="post-prev-text"><?php echo $post->text;?></p>
+                    <p class="post-prev-text"> Дата создания: <?php echo date('Y-m-d H:i:s',$post->created_at);?></p>
+                    <a href='/post/delete/<?php echo $post->id; ?>'>
+                        <button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Delete</button>
+                    </a>
                   <?php
                     } else {
                         echo '<h3>Постa нет</h3>';
                     }    
                   ?>
-                    <a href='/post/delete/<?php echo $post->id; ?>'>
-                        <button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Delete</button>
-                    </a>
               </div>
             </div>    
         <?php  Flight::render('posts/postMenu'); ?>

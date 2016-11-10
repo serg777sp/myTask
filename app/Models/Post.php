@@ -37,7 +37,7 @@ class Post extends Model {
         parent::delete($this->id, static::$table);
     }
 
-        public static function paginate($params){
+    public static function paginate($params){
         $pagination = [];
         $total = self::getTotal()[0];
         $offset = 0;

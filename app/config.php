@@ -3,9 +3,9 @@
 
 Flight::set('flight.views.path', 'app/Views'); //Каталог с видами
 Flight::set('site','task.progforce.loc'); //имя сайта
-Flight::set('dbname','pftask'); //Имя базы данных
-Flight::set('dbuser','root'); //Пользователь базы данных
-Flight::set('dbpass','secret'); //Пароль от базы данных
+Flight::set('dbname','имя базы'); //Имя базы данных
+Flight::set('dbuser','пользователь'); //Пользователь базы данных
+Flight::set('dbpass','пароль ;)'); //Пароль от базы данных
 
 //Мои функции (можно было вынести в отдельный файл)
 Flight::map('myAsset', function(){

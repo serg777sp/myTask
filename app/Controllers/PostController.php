@@ -6,7 +6,7 @@ use Flight;
 use App\Models\Post;
 
 class PostController extends Controller {
-    
+
     public function add(){
         $data = Flight::request()->data;
         if($data->submit){
@@ -20,7 +20,7 @@ class PostController extends Controller {
         ];
         Flight::render('posts/add',$viewData);
     }
-    
+   
     public function show($id){
         $post = Post::find($id);
         $viewData = [
@@ -36,7 +36,7 @@ class PostController extends Controller {
         Flight::redirect('/posts');
     }
 
-        public function paginate($page){
+    public function paginate($page){
         $pagInfo['count'] = 6;
         $pagInfo['page'] = (int)$page;
         $pagination = Post::paginate($pagInfo);

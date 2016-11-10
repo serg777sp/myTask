@@ -4,12 +4,9 @@ namespace App\Controllers;
 
 use Flight;
 use App\Models\Post;
-use JasonGrimes\Paginator;
 
 class Controller {
-    
-    public $parent = 'Controller';
-    
+       
     public function index(){
         $viewData = [
             'title' => 'My task > Home'

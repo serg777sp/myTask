@@ -6,7 +6,7 @@ use Flight;
 
 class Model {
     
-    public $newAttributes = [];
+    protected $newAttributes = [];
         
     protected function setAttributes($data){
         foreach($data as $key => $value){
