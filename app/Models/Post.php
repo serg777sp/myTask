@@ -16,8 +16,11 @@ class Post extends Model {
         if(!empty($files->pic)){
             move_uploaded_file($files->pic['tmp_name'],'upload/img/'.$files->pic['name']);
             $this->newAttributes['img_name'] = $files->pic['name'];
+        } else {
+            $this->newAttributes['img_name'] = NULL;
         }
         $this->newAttributes['created_at'] = time();
+        $this->newAttributes['updated_at'] = time();
 //        var_dump($this); die();
         $this->save();
     }
@@ -50,5 +53,22 @@ class Post extends Model {
             return \Flight::Url('upload/img/'.$this->img_name);
         }
     return \Flight::Url('upload/img/noImage.jpg');    
+    }
+    
+    public static function generate(){
+        //тут генератор 10 постов
+        for ($i = 0; $i < 10; $i++) {
+            $post = new Post();
+            $post->newAttributes['title'] = 'Gerate'.rand(0, 1000);
+            $post->newAttributes['text'] = 'Gerate generate generate generate generate generate generate '
+                    . 'generate generate generate generate generate generate generate generate generate '
+                    . 'generate generate generate generate generate generate generate generate generate generate generate generate '
+                    . 'generate generate generate generate generate generate generate generate generate ';
+            $post->newAttributes['img_name'] = NULL;
+            $post->newAttributes['created_at'] = time();
+            $post->newAttributes['updated_at'] = time();
+//            var_dump($post); die();
+            $post->save();
+        }
     }
 }

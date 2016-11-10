@@ -6,7 +6,6 @@ require_once 'app/config.php'; //Мой файл настроек
 use flight\Engine;
 
 $app = new Engine();
-//$app->set('flight.views.path', 'app/Views');
 //var_dump($app); die();
 $app->route('/', function(){
     $controller = new \App\Controllers\Controller();
@@ -27,6 +26,10 @@ $app->route('GET /post/show/@id', function($id){
 $app->route('GET /posts/page/@page', function($page){
     $controller = new \App\Controllers\PostController();
     $controller->paginate($page);
+});
+$app->route('GET /posts/generate', function(){
+    $controller = new \App\Controllers\PostController();
+    $controller->generate();
 });
 
 $app->start();

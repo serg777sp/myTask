@@ -19,6 +19,7 @@ class Model {
     protected function save(){
         $db = $this->connectDB();
         $query = $this->getCreateQuery();
+//        var_dump($query,$this->newAttributes); die();
         $STH = $db->prepare($query);  
         $STH->execute($this->newAttributes);
     }

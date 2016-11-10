@@ -41,4 +41,9 @@ class PostController extends Controller {
         ];        
         Flight::render('posts/posts',$viewData);  
     }
+    
+    public function generate(){
+        Post::generate();
+        Flight::redirect('/posts');
+    }
 }
