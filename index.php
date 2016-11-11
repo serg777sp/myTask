@@ -11,6 +11,10 @@ $app->route('/', function(){
     $controller = new \App\Controllers\Controller();
     $controller->index();
 });
+$app->route('GET /post/table/create', function(){
+    $controller = new \App\Controllers\Controller();
+    $controller->tableCreate();    
+});
 $app->route('/posts', function(){
     $controller = new \App\Controllers\Controller();
     $controller->Posts();
